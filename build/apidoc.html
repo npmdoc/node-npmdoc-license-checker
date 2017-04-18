@@ -1,0 +1,1186 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/davglass/license-checker#readme"
+
+    >license-checker (v9.0.3)</a>
+</h1>
+<h4>Check license info for a pacakge</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker">module license-checker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.asCSV">
+            function <span class="apidocSignatureSpan">license-checker.</span>asCSV
+            <span class="apidocSignatureSpan">(sorted, customFormat, csvComponentPrefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.asFiles">
+            function <span class="apidocSignatureSpan">license-checker.</span>asFiles
+            <span class="apidocSignatureSpan">(json, outDir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.asMarkDown">
+            function <span class="apidocSignatureSpan">license-checker.</span>asMarkDown
+            <span class="apidocSignatureSpan">(sorted, customFormat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.asTree">
+            function <span class="apidocSignatureSpan">license-checker.</span>asTree
+            <span class="apidocSignatureSpan">(sorted)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.init">
+            function <span class="apidocSignatureSpan">license-checker.</span>init
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.license">
+            function <span class="apidocSignatureSpan">license-checker.</span>license
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.parseJson">
+            function <span class="apidocSignatureSpan">license-checker.</span>parseJson
+            <span class="apidocSignatureSpan">(jsonPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.print">
+            function <span class="apidocSignatureSpan">license-checker.</span>print
+            <span class="apidocSignatureSpan">(sorted)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">license-checker.</span>args</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">license-checker.</span>stack</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.args">module license-checker.args</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.args.defaults">
+            function <span class="apidocSignatureSpan">license-checker.args.</span>defaults
+            <span class="apidocSignatureSpan">(parsed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.args.has">
+            function <span class="apidocSignatureSpan">license-checker.args.</span>has
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.args.parse">
+            function <span class="apidocSignatureSpan">license-checker.args.</span>parse
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.args.raw">
+            function <span class="apidocSignatureSpan">license-checker.args.</span>raw
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">license-checker.args.</span>known</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">license-checker.args.</span>shorts</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.asCSV">module license-checker.asCSV</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.asCSV.asCSV">
+            function <span class="apidocSignatureSpan">license-checker.</span>asCSV
+            <span class="apidocSignatureSpan">(sorted, customFormat, csvComponentPrefix)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.asFiles">module license-checker.asFiles</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.asFiles.asFiles">
+            function <span class="apidocSignatureSpan">license-checker.</span>asFiles
+            <span class="apidocSignatureSpan">(json, outDir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.asMarkDown">module license-checker.asMarkDown</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.asMarkDown.asMarkDown">
+            function <span class="apidocSignatureSpan">license-checker.</span>asMarkDown
+            <span class="apidocSignatureSpan">(sorted, customFormat)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.asTree">module license-checker.asTree</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.asTree.asTree">
+            function <span class="apidocSignatureSpan">license-checker.</span>asTree
+            <span class="apidocSignatureSpan">(sorted)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.init">module license-checker.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.init.init">
+            function <span class="apidocSignatureSpan">license-checker.</span>init
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.license">module license-checker.license</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.license.license">
+            function <span class="apidocSignatureSpan">license-checker.</span>license
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.parseJson">module license-checker.parseJson</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.parseJson.parseJson">
+            function <span class="apidocSignatureSpan">license-checker.</span>parseJson
+            <span class="apidocSignatureSpan">(jsonPath)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.print">module license-checker.print</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.print.print">
+            function <span class="apidocSignatureSpan">license-checker.</span>print
+            <span class="apidocSignatureSpan">(sorted)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.license-checker.stack">module license-checker.stack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.license-checker.stack.Stack">
+            function <span class="apidocSignatureSpan">license-checker.stack.</span>Stack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker" id="apidoc.module.license-checker">module license-checker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.asCSV" id="apidoc.element.license-checker.asCSV">
+        function <span class="apidocSignatureSpan">license-checker.</span>asCSV
+        <span class="apidocSignatureSpan">(sorted, customFormat, csvComponentPrefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asCSV = function (sorted, customFormat, csvComponentPrefix) {
+    var text = [ ], textArr = [ ], lineArr = [ ];
+    var prefixName = &#x27;&#x22;component&#x22;&#x27;;
+    var prefix = csvComponentPrefix;
+
+    if (customFormat &#x26;&#x26; Object.keys(customFormat).length &#x3e; 0) {
+        textArr = [ ];
+        if (csvComponentPrefix) { textArr.push(prefixName); }
+        textArr.push(&#x27;&#x22;module name&#x22;&#x27;);
+        Object.keys(customFormat).forEach(function forEachCallback(item) {
+            textArr.push(&#x27;&#x22;&#x27; + item + &#x27;&#x22;&#x27;);
+        });
+        text.push(textArr.join(&#x27;,&#x27;));
+    } else {
+        textArr = [];
+        if (csvComponentPrefix) { textArr.push(prefixName); }
+        [&#x27;&#x22;module name&#x22;&#x27;,&#x27;&#x22;license&#x22;&#x27;,&#x27;&#x22;repository&#x22;&#x27;].forEach(function(item) {
+            textArr.push(item);
+        });
+        text.push(textArr.join(&#x27;,&#x27;));
+    }
+
+    Object.keys(sorted).forEach(function(key) {
+        var module = sorted[key],
+        line = &#x27;&#x27;;
+        lineArr = [ ];
+
+        //Grab the custom keys from the custom format
+        if (customFormat &#x26;&#x26; Object.keys(customFormat).length &#x3e; 0) {
+            if (csvComponentPrefix) {
+                lineArr.push(&#x27;&#x22;&#x27;+prefix+&#x27;&#x22;&#x27;);
+            }
+            lineArr.push(&#x27;&#x22;&#x27; + key + &#x27;&#x22;&#x27;);
+            Object.keys(customFormat).forEach(function forEachCallback(item) {
+                lineArr.push(&#x27;&#x22;&#x27; + module[item] + &#x27;&#x22;&#x27;);
+            });
+            line = lineArr.join(&#x27;,&#x27;);
+        } else {
+            if (csvComponentPrefix) {
+                lineArr.push(&#x27;&#x22;&#x27;+prefix+&#x27;&#x22;&#x27;);
+            }
+            lineArr.push([
+                &#x27;&#x22;&#x27; + key + &#x27;&#x22;&#x27;,
+                &#x27;&#x22;&#x27; + (module.licenses || &#x27;&#x27;) + &#x27;&#x22;&#x27;,
+                &#x27;&#x22;&#x27; + (module.repository || &#x27;&#x27;) + &#x27;&#x22;&#x27;
+            ]);
+            line = lineArr.join(&#x27;,&#x27;);
+        }
+        text.push(line);
+    });
+
+    return text.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.asFiles" id="apidoc.element.license-checker.asFiles">
+        function <span class="apidocSignatureSpan">license-checker.</span>asFiles
+        <span class="apidocSignatureSpan">(json, outDir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asFiles = function (json, outDir) {
+    mkdirp.sync(outDir);
+    Object.keys(json).forEach(function (moduleName) {
+        var licenseFile = json[moduleName].licenseFile,
+            fileContents, outFileName, outPath;
+
+        if (licenseFile &#x26;&#x26; fs.existsSync(licenseFile)) {
+            fileContents = fs.readFileSync(licenseFile);
+            outFileName = chalk.stripColor(moduleName).replace(/(\s+|@)/g, &#x22;&#x22;) + &#x22;-LICENSE.txt&#x22;;
+            outPath = path.join(outDir, outFileName);
+            fs.writeFileSync(outPath, fileContents, &#x22;utf8&#x22;);
+        } else {
+            console.warn(&#x22;no license file found for: &#x22; + moduleName);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.asMarkDown" id="apidoc.element.license-checker.asMarkDown">
+        function <span class="apidocSignatureSpan">license-checker.</span>asMarkDown
+        <span class="apidocSignatureSpan">(sorted, customFormat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asMarkDown = function (sorted, customFormat) {
+
+    var text = [];
+    if (customFormat &#x26;&#x26; Object.keys(customFormat).length &#x3e; 0) {
+        Object.keys(sorted).forEach(function sortedCallback(sortedItem) {
+            text.push(&#x27; - **[&#x27; + sortedItem + &#x27;](&#x27; + sorted[sortedItem].repository + &#x27;)**&#x27;);
+            Object.keys(customFormat).forEach(function customCallback(customItem) {
+                text.push(&#x27;    - &#x27; +  customItem + &#x27;: &#x27; + sorted[sortedItem][customItem]);
+            });
+        });
+        text = text.join(&#x27;\n&#x27;);
+    } else {
+        Object.keys(sorted).forEach(function(key) {
+            var module = sorted[key];
+            text.push(&#x27;[&#x27; + key + &#x27;](&#x27; + module.repository + &#x27;) - &#x27; + module.licenses);
+        });
+        text = text.join(&#x27;\n&#x27;);
+    }
+
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.asTree" id="apidoc.element.license-checker.asTree">
+        function <span class="apidocSignatureSpan">license-checker.</span>asTree
+        <span class="apidocSignatureSpan">(sorted)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asTree = function (sorted) {
+    return treeify.asTree(sorted, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.init" id="apidoc.element.license-checker.init">
+        function <span class="apidocSignatureSpan">license-checker.</span>init
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options, callback) {
+    debugLog(&#x27;scanning %s&#x27;, options.start);
+
+    if (options.customPath) {
+        options.customFormat = this.parseJson(options.customPath);
+    }
+    var opts = {
+        dev: true,
+        log: debugLog
+    };
+
+    if (options.production || options.development) {
+        opts.dev = false;
+    }
+
+    read(options.start, opts, function(err, json) {
+        var data = flatten({
+                deps: json,
+                data: {},
+                color: options.color,
+                unknown: options.unknown,
+                customFormat: options.customFormat,
+                production: options.production,
+                development: options.development,
+                basePath: options.relativeLicensePath ? json.path : null
+            }),
+            colorize = options.color,
+            sorted = {},
+            filtered = {},
+            exclude = options.exclude &#x26;&#x26; options.exclude.match(/([^\\\][^,]|\\,)+/g).map(function(license) {
+                return license.replace(/\\,/g, &#x27;,&#x27;).replace(/^\s+|\s+$/g, &#x27;&#x27;);
+            }),
+            inputError = null;
+
+        Object.keys(data).sort().forEach(function(item) {
+            if (!data[item].licenses) {
+<span class="apidocCodeCommentSpan">                /*istanbul ignore next*/
+</span>                if (colorize) {
+                    data[item].licenses = chalk.bold.red(UNKNOWN);
+                } else {
+                    data[item].licenses = UNKNOWN;
+                }
+            }
+            if (options.unknown) {
+                if (data[item].licenses &#x26;&#x26; data[item].licenses !== UNKNOWN) {
+                    if (data[item].licenses.indexOf(&#x27;*&#x27;) &#x3e; -1) {
+                        /*istanbul ignore if*/
+                        if (colorize) {
+                            data[item].licenses = chalk.bold.red(UNKNOWN);
+                        } else {
+                            data[item].licenses = UNKNOWN;
+                        }
+                    }
+                }
+            }
+            /*istanbul ignore else*/
+            if (data[item]) {
+                if (options.onlyunknown) {
+                    if (data[item].licenses.indexOf(&#x27;*&#x27;) &#x3e; -1 ||
+                        data[item].licenses.indexOf(&#x27;UNKNOWN&#x27;) &#x3e; -1) {
+                        sorted[item] = data[item];
+                    }
+                } else {
+                    sorted[item] = data[item];
+                }
+            }
+        });
+        if (exclude) {
+            Object.keys(sorted).forEach(function(item) {
+                if (!(sorted[item].licenses &#x26;&#x26; exclude.indexOf(sorted[item].licenses) !== -1)) {
+                    filtered[item] = sorted[item];
+                }
+            });
+        } else {
+            filtered = sorted;
+        }
+
+        if (!Object.keys(sorted).length) {
+            err = new Error(&#x27;No packages found in this path..&#x27;);
+        }
+
+        /*istanbul ignore next*/
+        if (err) {
+            debugError(err);
+            inputError = err;
+        }
+
+        //Return the callback and variables nicely
+        callback(inputError, filtered);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Requiring
+---------
+
+
+```js
+var checker = require(&#x27;license-checker&#x27;);
+
+checker.<span class="apidocCodeKeywordSpan">init</span>({
+start: &#x27;/path/to/start/looking&#x27;
+}, function(err, json) {
+if (err) {
+    //Handle error
+} else {
+    //The sorted json data
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.license" id="apidoc.element.license-checker.license">
+        function <span class="apidocSignatureSpan">license-checker.</span>license
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">license = function (str) {
+    if (str) {
+        str = str.replace(&#x27;\n&#x27;, &#x27;&#x27;);
+    }
+    if (typeof str === &#x27;undefined&#x27; || !str) {
+        return &#x27;Undefined&#x27;;
+    } else if (ISC_LICENSE.test(str)) {
+        return &#x27;ISC*&#x27;;
+    } else if (MIT_LICENSE.test(str)) {
+        return &#x27;MIT*&#x27;;
+    } else if (BSD_LICENSE.test(str)) {
+        return &#x27;BSD*&#x27;;
+    } else if (BSD_SOURCE_CODE_LICENSE.test(str)) {
+        // https://spdx.org/licenses/BSD-Source-Code.html
+        return &#x27;BSD-Source-Code*&#x27;;
+    } else if (WTFPL_LICENSE.test(str)) {
+        return &#x27;WTFPL*&#x27;;
+    } else if (ISC.test(str)) {
+        return &#x27;ISC*&#x27;;
+    } else if (MIT.test(str)) {
+        return &#x27;MIT*&#x27;;
+    } else if (BSD.test(str)) {
+        return &#x27;BSD*&#x27;;
+    } else if (WTFPL.test(str)) {
+        return &#x27;WTFPL*&#x27;;
+    } else if (APACHE.test(str)) {
+        return &#x27;Apache*&#x27;;
+    } else if (CC0_1_0.test(str)) {
+        return &#x27;CC0-1.0*&#x27;;
+    }
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.parseJson" id="apidoc.element.license-checker.parseJson">
+        function <span class="apidocSignatureSpan">license-checker.</span>parseJson
+        <span class="apidocSignatureSpan">(jsonPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseJson = function (jsonPath) {
+    if (typeof jsonPath !== &#x27;string&#x27;) {
+        return new Error(&#x27;did not specify a path&#x27;);
+    }
+
+    var jsonFileContents = &#x27;&#x27;,
+        result = { };
+
+    try {
+        jsonFileContents = fs.readFileSync(jsonPath, {encoding: &#x27;utf8&#x27;});
+        result = JSON.parse(jsonFileContents);
+    } catch (err) {
+        result = err;
+    } finally {
+      return result;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.print" id="apidoc.element.license-checker.print">
+        function <span class="apidocSignatureSpan">license-checker.</span>print
+        <span class="apidocSignatureSpan">(sorted)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (sorted) {
+    console.log(exports.asTree(sorted));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.args" id="apidoc.module.license-checker.args">module license-checker.args</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.args.defaults" id="apidoc.element.license-checker.args.defaults">
+        function <span class="apidocSignatureSpan">license-checker.args.</span>defaults
+        <span class="apidocSignatureSpan">(parsed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (parsed) {
+    if (parsed === undefined) {
+        parsed = clean();
+    }
+<span class="apidocCodeCommentSpan">    /*istanbul ignore else*/
+</span>    if (parsed.color === undefined) {
+        parsed.color = chalk.supportsColor;
+    }
+    if (parsed.json || parsed.markdown || parsed.csv) {
+        parsed.color = false;
+    }
+    parsed.start = parsed.start || process.cwd();
+    parsed.relativeLicensePath = !!parsed.relativeLicensePath;
+
+    return parsed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.args.has" id="apidoc.element.license-checker.args.has">
+        function <span class="apidocSignatureSpan">license-checker.args.</span>has
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (a) {
+    var cooked = raw().argv.cooked,
+    ret = false;
+
+    cooked.forEach(function (o) {
+        if ((o === &#x27;--&#x27; + a) || (o === &#x27;--no-&#x27; + a)) {
+            ret = true;
+        }
+    });
+
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.args.parse" id="apidoc.element.license-checker.args.parse">
+        function <span class="apidocSignatureSpan">license-checker.args.</span>parse
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (args) {
+    var parsed = clean(args);
+    return setDefaults(parsed);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.args.raw" id="apidoc.element.license-checker.args.raw">
+        function <span class="apidocSignatureSpan">license-checker.args.</span>raw
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">raw = function (args) {
+    return nopt(known, shorts, (args || process.argv));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.asCSV" id="apidoc.module.license-checker.asCSV">module license-checker.asCSV</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.asCSV.asCSV" id="apidoc.element.license-checker.asCSV.asCSV">
+        function <span class="apidocSignatureSpan">license-checker.</span>asCSV
+        <span class="apidocSignatureSpan">(sorted, customFormat, csvComponentPrefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asCSV = function (sorted, customFormat, csvComponentPrefix) {
+    var text = [ ], textArr = [ ], lineArr = [ ];
+    var prefixName = &#x27;&#x22;component&#x22;&#x27;;
+    var prefix = csvComponentPrefix;
+
+    if (customFormat &#x26;&#x26; Object.keys(customFormat).length &#x3e; 0) {
+        textArr = [ ];
+        if (csvComponentPrefix) { textArr.push(prefixName); }
+        textArr.push(&#x27;&#x22;module name&#x22;&#x27;);
+        Object.keys(customFormat).forEach(function forEachCallback(item) {
+            textArr.push(&#x27;&#x22;&#x27; + item + &#x27;&#x22;&#x27;);
+        });
+        text.push(textArr.join(&#x27;,&#x27;));
+    } else {
+        textArr = [];
+        if (csvComponentPrefix) { textArr.push(prefixName); }
+        [&#x27;&#x22;module name&#x22;&#x27;,&#x27;&#x22;license&#x22;&#x27;,&#x27;&#x22;repository&#x22;&#x27;].forEach(function(item) {
+            textArr.push(item);
+        });
+        text.push(textArr.join(&#x27;,&#x27;));
+    }
+
+    Object.keys(sorted).forEach(function(key) {
+        var module = sorted[key],
+        line = &#x27;&#x27;;
+        lineArr = [ ];
+
+        //Grab the custom keys from the custom format
+        if (customFormat &#x26;&#x26; Object.keys(customFormat).length &#x3e; 0) {
+            if (csvComponentPrefix) {
+                lineArr.push(&#x27;&#x22;&#x27;+prefix+&#x27;&#x22;&#x27;);
+            }
+            lineArr.push(&#x27;&#x22;&#x27; + key + &#x27;&#x22;&#x27;);
+            Object.keys(customFormat).forEach(function forEachCallback(item) {
+                lineArr.push(&#x27;&#x22;&#x27; + module[item] + &#x27;&#x22;&#x27;);
+            });
+            line = lineArr.join(&#x27;,&#x27;);
+        } else {
+            if (csvComponentPrefix) {
+                lineArr.push(&#x27;&#x22;&#x27;+prefix+&#x27;&#x22;&#x27;);
+            }
+            lineArr.push([
+                &#x27;&#x22;&#x27; + key + &#x27;&#x22;&#x27;,
+                &#x27;&#x22;&#x27; + (module.licenses || &#x27;&#x27;) + &#x27;&#x22;&#x27;,
+                &#x27;&#x22;&#x27; + (module.repository || &#x27;&#x27;) + &#x27;&#x22;&#x27;
+            ]);
+            line = lineArr.join(&#x27;,&#x27;);
+        }
+        text.push(line);
+    });
+
+    return text.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.asFiles" id="apidoc.module.license-checker.asFiles">module license-checker.asFiles</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.asFiles.asFiles" id="apidoc.element.license-checker.asFiles.asFiles">
+        function <span class="apidocSignatureSpan">license-checker.</span>asFiles
+        <span class="apidocSignatureSpan">(json, outDir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asFiles = function (json, outDir) {
+    mkdirp.sync(outDir);
+    Object.keys(json).forEach(function (moduleName) {
+        var licenseFile = json[moduleName].licenseFile,
+            fileContents, outFileName, outPath;
+
+        if (licenseFile &#x26;&#x26; fs.existsSync(licenseFile)) {
+            fileContents = fs.readFileSync(licenseFile);
+            outFileName = chalk.stripColor(moduleName).replace(/(\s+|@)/g, &#x22;&#x22;) + &#x22;-LICENSE.txt&#x22;;
+            outPath = path.join(outDir, outFileName);
+            fs.writeFileSync(outPath, fileContents, &#x22;utf8&#x22;);
+        } else {
+            console.warn(&#x22;no license file found for: &#x22; + moduleName);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.asMarkDown" id="apidoc.module.license-checker.asMarkDown">module license-checker.asMarkDown</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.asMarkDown.asMarkDown" id="apidoc.element.license-checker.asMarkDown.asMarkDown">
+        function <span class="apidocSignatureSpan">license-checker.</span>asMarkDown
+        <span class="apidocSignatureSpan">(sorted, customFormat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asMarkDown = function (sorted, customFormat) {
+
+    var text = [];
+    if (customFormat &#x26;&#x26; Object.keys(customFormat).length &#x3e; 0) {
+        Object.keys(sorted).forEach(function sortedCallback(sortedItem) {
+            text.push(&#x27; - **[&#x27; + sortedItem + &#x27;](&#x27; + sorted[sortedItem].repository + &#x27;)**&#x27;);
+            Object.keys(customFormat).forEach(function customCallback(customItem) {
+                text.push(&#x27;    - &#x27; +  customItem + &#x27;: &#x27; + sorted[sortedItem][customItem]);
+            });
+        });
+        text = text.join(&#x27;\n&#x27;);
+    } else {
+        Object.keys(sorted).forEach(function(key) {
+            var module = sorted[key];
+            text.push(&#x27;[&#x27; + key + &#x27;](&#x27; + module.repository + &#x27;) - &#x27; + module.licenses);
+        });
+        text = text.join(&#x27;\n&#x27;);
+    }
+
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.asTree" id="apidoc.module.license-checker.asTree">module license-checker.asTree</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.asTree.asTree" id="apidoc.element.license-checker.asTree.asTree">
+        function <span class="apidocSignatureSpan">license-checker.</span>asTree
+        <span class="apidocSignatureSpan">(sorted)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asTree = function (sorted) {
+    return treeify.asTree(sorted, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.init" id="apidoc.module.license-checker.init">module license-checker.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.init.init" id="apidoc.element.license-checker.init.init">
+        function <span class="apidocSignatureSpan">license-checker.</span>init
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options, callback) {
+    debugLog(&#x27;scanning %s&#x27;, options.start);
+
+    if (options.customPath) {
+        options.customFormat = this.parseJson(options.customPath);
+    }
+    var opts = {
+        dev: true,
+        log: debugLog
+    };
+
+    if (options.production || options.development) {
+        opts.dev = false;
+    }
+
+    read(options.start, opts, function(err, json) {
+        var data = flatten({
+                deps: json,
+                data: {},
+                color: options.color,
+                unknown: options.unknown,
+                customFormat: options.customFormat,
+                production: options.production,
+                development: options.development,
+                basePath: options.relativeLicensePath ? json.path : null
+            }),
+            colorize = options.color,
+            sorted = {},
+            filtered = {},
+            exclude = options.exclude &#x26;&#x26; options.exclude.match(/([^\\\][^,]|\\,)+/g).map(function(license) {
+                return license.replace(/\\,/g, &#x27;,&#x27;).replace(/^\s+|\s+$/g, &#x27;&#x27;);
+            }),
+            inputError = null;
+
+        Object.keys(data).sort().forEach(function(item) {
+            if (!data[item].licenses) {
+<span class="apidocCodeCommentSpan">                /*istanbul ignore next*/
+</span>                if (colorize) {
+                    data[item].licenses = chalk.bold.red(UNKNOWN);
+                } else {
+                    data[item].licenses = UNKNOWN;
+                }
+            }
+            if (options.unknown) {
+                if (data[item].licenses &#x26;&#x26; data[item].licenses !== UNKNOWN) {
+                    if (data[item].licenses.indexOf(&#x27;*&#x27;) &#x3e; -1) {
+                        /*istanbul ignore if*/
+                        if (colorize) {
+                            data[item].licenses = chalk.bold.red(UNKNOWN);
+                        } else {
+                            data[item].licenses = UNKNOWN;
+                        }
+                    }
+                }
+            }
+            /*istanbul ignore else*/
+            if (data[item]) {
+                if (options.onlyunknown) {
+                    if (data[item].licenses.indexOf(&#x27;*&#x27;) &#x3e; -1 ||
+                        data[item].licenses.indexOf(&#x27;UNKNOWN&#x27;) &#x3e; -1) {
+                        sorted[item] = data[item];
+                    }
+                } else {
+                    sorted[item] = data[item];
+                }
+            }
+        });
+        if (exclude) {
+            Object.keys(sorted).forEach(function(item) {
+                if (!(sorted[item].licenses &#x26;&#x26; exclude.indexOf(sorted[item].licenses) !== -1)) {
+                    filtered[item] = sorted[item];
+                }
+            });
+        } else {
+            filtered = sorted;
+        }
+
+        if (!Object.keys(sorted).length) {
+            err = new Error(&#x27;No packages found in this path..&#x27;);
+        }
+
+        /*istanbul ignore next*/
+        if (err) {
+            debugError(err);
+            inputError = err;
+        }
+
+        //Return the callback and variables nicely
+        callback(inputError, filtered);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Requiring
+---------
+
+
+```js
+var checker = require(&#x27;license-checker&#x27;);
+
+checker.<span class="apidocCodeKeywordSpan">init</span>({
+start: &#x27;/path/to/start/looking&#x27;
+}, function(err, json) {
+if (err) {
+    //Handle error
+} else {
+    //The sorted json data
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.license" id="apidoc.module.license-checker.license">module license-checker.license</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.license.license" id="apidoc.element.license-checker.license.license">
+        function <span class="apidocSignatureSpan">license-checker.</span>license
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">license = function (str) {
+    if (str) {
+        str = str.replace(&#x27;\n&#x27;, &#x27;&#x27;);
+    }
+    if (typeof str === &#x27;undefined&#x27; || !str) {
+        return &#x27;Undefined&#x27;;
+    } else if (ISC_LICENSE.test(str)) {
+        return &#x27;ISC*&#x27;;
+    } else if (MIT_LICENSE.test(str)) {
+        return &#x27;MIT*&#x27;;
+    } else if (BSD_LICENSE.test(str)) {
+        return &#x27;BSD*&#x27;;
+    } else if (BSD_SOURCE_CODE_LICENSE.test(str)) {
+        // https://spdx.org/licenses/BSD-Source-Code.html
+        return &#x27;BSD-Source-Code*&#x27;;
+    } else if (WTFPL_LICENSE.test(str)) {
+        return &#x27;WTFPL*&#x27;;
+    } else if (ISC.test(str)) {
+        return &#x27;ISC*&#x27;;
+    } else if (MIT.test(str)) {
+        return &#x27;MIT*&#x27;;
+    } else if (BSD.test(str)) {
+        return &#x27;BSD*&#x27;;
+    } else if (WTFPL.test(str)) {
+        return &#x27;WTFPL*&#x27;;
+    } else if (APACHE.test(str)) {
+        return &#x27;Apache*&#x27;;
+    } else if (CC0_1_0.test(str)) {
+        return &#x27;CC0-1.0*&#x27;;
+    }
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.parseJson" id="apidoc.module.license-checker.parseJson">module license-checker.parseJson</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.parseJson.parseJson" id="apidoc.element.license-checker.parseJson.parseJson">
+        function <span class="apidocSignatureSpan">license-checker.</span>parseJson
+        <span class="apidocSignatureSpan">(jsonPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseJson = function (jsonPath) {
+    if (typeof jsonPath !== &#x27;string&#x27;) {
+        return new Error(&#x27;did not specify a path&#x27;);
+    }
+
+    var jsonFileContents = &#x27;&#x27;,
+        result = { };
+
+    try {
+        jsonFileContents = fs.readFileSync(jsonPath, {encoding: &#x27;utf8&#x27;});
+        result = JSON.parse(jsonFileContents);
+    } catch (err) {
+        result = err;
+    } finally {
+      return result;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.print" id="apidoc.module.license-checker.print">module license-checker.print</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.print.print" id="apidoc.element.license-checker.print.print">
+        function <span class="apidocSignatureSpan">license-checker.</span>print
+        <span class="apidocSignatureSpan">(sorted)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (sorted) {
+    console.log(exports.asTree(sorted));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.license-checker.stack" id="apidoc.module.license-checker.stack">module license-checker.stack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.license-checker.stack.Stack" id="apidoc.element.license-checker.stack.Stack">
+        function <span class="apidocSignatureSpan">license-checker.stack.</span>Stack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Stack = function () {
+    this.errors   = [];
+    this.finished = 0;
+    this.results  = [];
+    this.total    = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
