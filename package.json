@@ -1,1 +1,39 @@
-{     "devDependencies": {         "license-checker": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-license-checker",     "homepage": "https://github.com/npmdoc/node-npmdoc-license-checker",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-license-checker.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "api documentation for [license-checker (v9.0.3)](https://github.com/davglass/license-checker#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-license-checker.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-license-checker) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-license-checker.svg)](https://travis-ci.org/npmdoc/node-npmdoc-license-checker)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "license-checker": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-license-checker",
+    "keywords": [
+        "documentation",
+        "license-checker"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_license_checker.js",
+    "name": "npmdoc-license-checker",
+    "nameAlias": "npmdoc_license_checker",
+    "nameOriginal": "npmdoc-license-checker",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-license-checker.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
