@@ -1,4 +1,7 @@
-# api documentation for  [license-checker (v9.0.3)](https://github.com/davglass/license-checker#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-license-checker.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-license-checker) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-license-checker.svg)](https://travis-ci.org/npmdoc/node-npmdoc-license-checker)
+# npmdoc-license-checker
+
+#### basic api documentation for  [license-checker (v9.0.3)](https://github.com/davglass/license-checker#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-license-checker.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-license-checker) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-license-checker.svg)](https://travis-ci.org/npmdoc/node-npmdoc-license-checker)
+
 #### Check license info for a pacakge
 
 [![NPM](https://nodei.co/npm/license-checker.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/license-checker)
